@@ -23,8 +23,8 @@ export const coreMemory = pgTable("core_memory", {
   agentId: uuid("agent_id")
     .references(() => agents.id)
     .notNull(),
-  section: text("section").notNull(),
-  content: text("content").notNull().default(""),
+  section: text("section").notNull(), // "human" | "persona"
+  content: text("content").notNull().default(""), // e.g. "John Doe is 30 years old and lives in New York."
   updatedAt: timestamp("updated_at").defaultNow().notNull(),
 });
 
