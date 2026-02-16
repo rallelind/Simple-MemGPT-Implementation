@@ -140,7 +140,7 @@ export class ContextManager {
         .where(eq(messages.id, oldest.id));
 
       prompt = await this.assemblePrompt();
-      tokenCount = await this.countMessageTokens(prompt);
+      tokenCount = this.countMessageTokens(prompt);
     }
 
     return prompt;
